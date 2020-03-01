@@ -1,0 +1,22 @@
+namespace IDA_Smart_Pointer
+{
+
+
+
+  smart_pointer& operator=(const smart_pointer& rhs){
+    copy(rhs);
+  }
+  smart_pointer& operator=(smart_pointer&& rhs) {
+    ptr_=rhs.get();
+  }
+
+
+  void smart_pointer::copy(const smart_pointer& p){
+    ptr_=p.get();
+    delete p;
+  }
+
+  int* get(){
+    return ptr_;
+  }
+} // namespace IDA_Smart_Pointer

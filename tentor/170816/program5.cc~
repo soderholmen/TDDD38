@@ -1,0 +1,10 @@
+#include <iostream>
+
+
+void main(){
+  std::list<int> list;
+  std::copy(std::istream_iterator<int>(stream),
+    std::istream_iterator<int>(),
+    std::back_inserter(list));
+  
+}
